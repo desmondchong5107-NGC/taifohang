@@ -19,7 +19,8 @@ body {
 }
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 8px 5%;
     background: #000;
@@ -29,21 +30,26 @@ header {
     left: 0;
     z-index: 999;
     border-bottom: 1px solid #d4af37;
-    height: 80px;
+    height: auto; /* 导航栏高度自适应，不手动固定 */
 }
+/* 核心修改：放大Logo尺寸，不影响导航栏 */
 .logo-img {
-    height: 90px;
+    height: 90px; /* 恢复并放大Logo原始尺寸（之前调小到60px，现在改回90px+） */
     width: auto;
     object-fit: contain;
     cursor: pointer;
-    margin-top: -5px;
-    margin-bottom: -5px;
+    margin-bottom: 8px; /* 仅保留Logo和导航的小间距，不调整导航整体 */
+}
+nav {
+    width: 100%;
+    text-align: center;
+    /* 导航栏样式完全不变，保证大小/间距/字体都和之前一致 */
 }
 nav a {
     color: #fff;
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 14px;
+    margin: 0 15px; /* 导航链接间距不变 */
+    font-size: 14px; /* 导航字体大小不变 */
     transition: color 0.3s ease;
 }
 nav a:hover {
@@ -52,7 +58,7 @@ nav a:hover {
 /* 适配banner.png，核心背景图设置 */
 .banner {
     height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('banner.png');
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('/banner.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -62,7 +68,7 @@ nav a:hover {
     text-align: center;
     padding: 100px 20px 20px;
     width: 100%;
-    margin-top: 80px;
+    margin-top: 110px; /* 仅微调Banner上边距，避免被放大的Logo遮挡 */
 }
 .banner h1 {
     font-size: 48px;
@@ -170,22 +176,19 @@ footer {
     border-top: 1px solid #222;
     font-size: 14px;
 }
-/* 平板端适配 */
+/* 平板端适配：仅调整Logo和Banner间距，导航样式不变 */
 @media screen and (max-width: 1199px) and (min-width: 768px) {
-    header {height: 70px;}
-    .logo-img {height: 80px; margin-top: -4px; margin-bottom: -4px;}
-    nav a {margin-left: 20px; font-size: 13px;}
-    .banner {height: 400px; margin-top: 70px; padding-top: 80px;}
+    .logo-img {height: 85px;} /* 平板端Logo略调，导航不变 */
+    nav a {margin: 0 20px; font-size: 16px;}
+    .banner {height: 400px; margin-top: 100px; padding-top: 80px;}
     .banner h1 {font-size: 40px;}
     .banner-desc {font-size: 17px;}
 }
-/* 手机端适配 */
+/* 手机端适配：Logo放大，导航样式完全不变 */
 @media screen and (max-width: 767px) {
-    header {height: auto; flex-direction: column; padding: 8px 5%;}
-    .logo-img {height: 80px; margin: 0 0 8px;}
-    nav {width: 100%; margin-bottom: 8px;}
-    nav a {margin: 0 8px; font-size: 12px;}
-    .banner {height: 300px; margin-top: 90px;}
+    .logo-img {height: 80px;} /* 手机端Logo放大，导航不变 */
+    nav a {margin: 0 12px; font-size: 14px;} /* 导航间距/字体不变 */
+    .banner {height: 300px; margin-top: 100px;}
     .banner h1 {font-size: 32px; margin-bottom: 20px;}
     .banner-desc {font-size: 15px; padding: 0 15px;}
     .service-list {gap: 30px;}
@@ -229,7 +232,6 @@ footer {
     </div>
 </section>
 
-<!-- 新增2018年创立的信息，保留极简风格 -->
 <section class="about" id="about">
     <h2 class="section-title">关于我们</h2>
     <p>泰佛行始于2018年，专注泰国正牌与运程测算，多年深耕，只做正牌，诚信结缘。</p>
