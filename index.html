@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>泰佛行 - 泰国正牌 | 运程测算</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5%;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border-bottom: 1px solid #d4af37;
+    height: 80px;
+}
+.logo-img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #d4af37;
+}
+/* 适配banner.png，核心背景图设置 */
+.banner {
+    height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('banner.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 20px;
+    width: 100%;
+    margin-top: 80px;
+}
+.banner h1 {
+    font-size: 48px;
+    color: #d4af37;
+    margin-bottom: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.banner-desc {
+    font-size: 18px;
+    color: #e0e0e0;
+    padding: 0 20px;
+    border-left: 2px solid #d4af37;
+    border-right: 2px solid #d4af37;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.services, .about, .contact {
+    width: 100%;
+    scroll-margin-top: 100px;
+    padding: 50px 5%;
+    background: #111;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    text-align: center;
+}
+.contact {
+    background: #0a0a0a;
+}
+.section-title {
+    font-size: 30px;
+    color: #d4af37;
+    margin: 0 0 30px;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 2px;
+    background: #d4af37;
+    display: block;
+    margin: 10px auto;
+}
+.service-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.service-card {
+    text-align: center;
+    max-width: 300px;
+}
+.service-icon {
+    font-size: 50px;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+.service-name {
+    font-size: 22px;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+.service-desc {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+}
+.about p, .contact p {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.social-logo {
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+.social-logo.facebook {color: #1877f2;}
+.social-logo.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.social-logo.gmail {color: #ea4335;}
+.social-logo:hover {transform: scale(1.1);}
+footer {
+    background: #000;
+    padding: 25px;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #222;
+    font-size: 14px;
+}
+/* 平板端适配 */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    header {height: 70px;}
+    .logo-img {height: 80px; margin-top: -4px; margin-bottom: -4px;}
+    nav a {margin-left: 20px; font-size: 13px;}
+    .banner {height: 400px; margin-top: 70px; padding-top: 80px;}
+    .banner h1 {font-size: 40px;}
+    .banner-desc {font-size: 17px;}
+}
+/* 手机端适配 */
+@media screen and (max-width: 767px) {
+    header {height: auto; flex-direction: column; padding: 8px 5%;}
+    .logo-img {height: 80px; margin: 0 0 8px;}
+    nav {width: 100%; margin-bottom: 8px;}
+    nav a {margin: 0 8px; font-size: 12px;}
+    .banner {height: 300px; margin-top: 90px;}
+    .banner h1 {font-size: 32px; margin-bottom: 20px;}
+    .banner-desc {font-size: 15px; padding: 0 15px;}
+    .service-list {gap: 30px;}
+    .service-icon {font-size: 40px;}
+    .service-name {font-size: 18px;}
+    .contact-links {gap: 30px;}
+    .social-logo {font-size: 35px;}
+}
+</style>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <a href="#top"><img src="https://p5-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/690e4e8b430c4963bf60968823092f1c.png~tplv-a9rns2rl98-image.png?lk3s=8e244e95&rcl=20260226005627949F13E80FCE8B1409FE&rrcfp=dafada99&x-expires=2088262587&x-signature=L4WPMO6TR33kUyiXeGJlaX0MfwE%3D" alt="泰佛行" class="logo-img"></a>
+    <nav>
+        <a href="#services">业务</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系</a>
+    </nav>
+</header>
+<div id="top"></div>
+
+<section class="banner">
+    <h1>泰佛行</h1>
+    <div class="banner-desc">泰国正牌甄选 · 泰师运程测算</div>
+</section>
+
+<section class="services" id="services">
+    <h2 class="section-title">核心业务</h2>
+    <div class="service-list">
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-gem"></i></div>
+            <div class="service-name">泰国正牌</div>
+            <div class="service-desc">开光佛牌，保真溯源，品类齐全</div>
+        </div>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-user-friends"></i></div>
+            <div class="service-name">运程测算</div>
+            <div class="service-desc">泰国师傅亲测，定制专属转运方案</div>
+        </div>
+    </div>
+</section>
+
+<!-- 新增2018年创立的信息，保留极简风格 -->
+<section class="about" id="about">
+    <h2 class="section-title">关于我们</h2>
+    <p>泰佛行始于2018年，专注泰国正牌与运程测算，多年深耕，只做正牌，诚信结缘。</p>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">联系我们</h2>
+    <p>咨询佛牌/预约测算，可通过以下渠道联系</p>
+    <div class="contact-links">
+        <a href="https://www.facebook.com/profile.php?id=61556600907559" target="_blank" class="social-logo facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/taifo_hang/?__pwa=1" target="_blank" class="social-logo instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:taifohang3444@gmail.com" target="_blank" class="social-logo gmail"><i class="fas fa-envelope"></i></a>
+    </div>
+</section>
+
+<footer>© 2026 泰佛行 版权所有 | 泰国正牌 · 运程测算</footer>
+</body>
+</html>
