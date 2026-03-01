@@ -30,32 +30,29 @@ header {
     left: 0;
     z-index: 999;
     border-bottom: 1px solid #d4af37;
-    height: auto; /* 导航栏高度自适应，不手动固定 */
+    height: auto;
 }
-/* 核心修改：放大Logo尺寸，不影响导航栏 */
 .logo-img {
-    height: 90px; /* 恢复并放大Logo原始尺寸（之前调小到60px，现在改回90px+） */
+    height: 90px;
     width: auto;
     object-fit: contain;
     cursor: pointer;
-    margin-bottom: 8px; /* 仅保留Logo和导航的小间距，不调整导航整体 */
+    margin-bottom: 8px;
 }
 nav {
     width: 100%;
     text-align: center;
-    /* 导航栏样式完全不变，保证大小/间距/字体都和之前一致 */
 }
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px; /* 导航链接间距不变 */
-    font-size: 14px; /* 导航字体大小不变 */
+    margin: 0 15px;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 nav a:hover {
     color: #d4af37;
 }
-/* 适配banner.png，核心背景图设置 */
 .banner {
     height: 500px;
     background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('/banner.png');
@@ -68,7 +65,7 @@ nav a:hover {
     text-align: center;
     padding: 100px 20px 20px;
     width: 100%;
-    margin-top: 110px; /* 仅微调Banner上边距，避免被放大的Logo遮挡 */
+    margin-top: 110px;
 }
 .banner h1 {
     font-size: 48px;
@@ -167,6 +164,8 @@ nav a:hover {
     color: transparent;
 }
 .social-logo.gmail {color: #ea4335;}
+/* WhatsApp专属样式（绿色） */
+.social-logo.whatsapp {color: #25d366;}
 .social-logo:hover {transform: scale(1.1);}
 footer {
     background: #000;
@@ -176,18 +175,18 @@ footer {
     border-top: 1px solid #222;
     font-size: 14px;
 }
-/* 平板端适配：仅调整Logo和Banner间距，导航样式不变 */
+/* 平板端适配 */
 @media screen and (max-width: 1199px) and (min-width: 768px) {
-    .logo-img {height: 85px;} /* 平板端Logo略调，导航不变 */
+    .logo-img {height: 85px;}
     nav a {margin: 0 20px; font-size: 16px;}
     .banner {height: 400px; margin-top: 100px; padding-top: 80px;}
     .banner h1 {font-size: 40px;}
     .banner-desc {font-size: 17px;}
 }
-/* 手机端适配：Logo放大，导航样式完全不变 */
+/* 手机端适配 */
 @media screen and (max-width: 767px) {
-    .logo-img {height: 80px;} /* 手机端Logo放大，导航不变 */
-    nav a {margin: 0 12px; font-size: 14px;} /* 导航间距/字体不变 */
+    .logo-img {height: 80px;}
+    nav a {margin: 0 12px; font-size: 14px;}
     .banner {height: 300px; margin-top: 100px;}
     .banner h1 {font-size: 32px; margin-bottom: 20px;}
     .banner-desc {font-size: 15px; padding: 0 15px;}
@@ -198,6 +197,7 @@ footer {
     .social-logo {font-size: 35px;}
 }
 </style>
+<!-- 引入Font Awesome图标库（确保所有图标正常显示） -->
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -244,6 +244,8 @@ footer {
         <a href="https://www.facebook.com/profile.php?id=61556600907559" target="_blank" class="social-logo facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/taifo_hang/?__pwa=1" target="_blank" class="social-logo instagram"><i class="fab fa-instagram"></i></a>
         <a href="mailto:taifohang3444@gmail.com" target="_blank" class="social-logo gmail"><i class="fas fa-envelope"></i></a>
+        <!-- 最终正确的WhatsApp链接（601172334462） -->
+        <a href="https://wa.me/601172334462" target="_blank" class="social-logo whatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
 </section>
 
