@@ -1,254 +1,928 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>泰佛行 - 泰国正牌 | 运程测算</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>泰佛行｜泰国正牌 · 泰师运程测算</title>
+<meta name="description" content="泰佛行专注泰国正牌佛牌甄选与泰师运程测算。始于2018，只做正牌，诚信结缘。" />
+<meta name="theme-color" content="#030303" />
+
+<meta property="og:title" content="泰佛行｜泰国正牌 · 泰师运程测算" />
+<meta property="og:description" content="先理解，再结缘。泰佛行专注泰国正牌佛牌甄选与泰师运程测算。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/og-cover.jpg" />
+
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "泰佛行",
+  "description": "泰国正牌佛牌甄选与泰师运程测算",
+  "foundingDate": "2018",
+  "email": "taifohang3444@gmail.com",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61556600907559",
+    "https://www.instagram.com/taifo_hang/"
+  ]
+}
+</script>
+
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    --black:#030303;
+    --surface:rgba(255,255,255,.055);
+    --surface-2:rgba(255,255,255,.085);
+    --stroke:rgba(255,255,255,.12);
+    --gold:#d7b56d;
+    --gold-2:#f8dea0;
+    --gold-3:#8d6832;
+    --text:#f7f2e7;
+    --muted:#a9a194;
+    --green:#25d366;
+    --shadow:0 40px 120px rgba(0,0,0,.58);
+    --blur:saturate(180%) blur(24px);
 }
-body {
-    font-family: "Microsoft YaHei", sans-serif;
-    background: #0a0a0a;
-    color: #fff;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--black)}
+body{
+    min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    color:var(--text);
+    background:
+        radial-gradient(circle at 50% -18%, rgba(248,222,160,.18), transparent 30%),
+        radial-gradient(circle at 88% 14%, rgba(166,113,46,.18), transparent 34%),
+        radial-gradient(circle at 8% 30%, rgba(248,222,160,.07), transparent 30%),
+        linear-gradient(180deg,#030303 0%,#090806 42%,#030303 100%);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
 }
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 5%;
-    background: #000;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    border-bottom: 1px solid #d4af37;
-    height: auto;
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(180deg,rgba(255,255,255,.045),transparent 22%),
+        radial-gradient(circle at 50% 8%, rgba(255,255,255,.08), transparent 24%),
+        radial-gradient(circle at center, transparent 0%, rgba(0,0,0,.58) 100%);
+    z-index:-3;
 }
-.logo-img {
-    height: 90px;
-    width: auto;
-    object-fit: contain;
-    cursor: pointer;
-    margin-bottom: 8px;
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.30;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,.8), transparent 72%);
+    z-index:-2;
 }
-nav {
-    width: 100%;
-    text-align: center;
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1180px, calc(100% - 48px));margin:0 auto}
+.gold{
+    background:linear-gradient(110deg,#fff1bd 0%,#f7d88f 30%,#cda45a 58%,#8c642d 82%,#ffe9b0 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 14px;
-    transition: color 0.3s ease;
+.noise{
+    position:absolute;inset:0;opacity:.06;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
 }
-nav a:hover {
-    color: #d4af37;
+header{
+    position:fixed;top:12px;left:0;right:0;z-index:1000;padding:0 24px;
 }
-.banner {
-    height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('/banner.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px 20px;
-    width: 100%;
-    margin-top: 110px;
+.nav-shell{
+    height:68px;width:min(1060px,100%);margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding:0 12px 0 14px;border:1px solid rgba(255,255,255,.12);
+    border-radius:999px;background:rgba(12,12,12,.56);
+    backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+    box-shadow:0 18px 60px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.09);
 }
-.banner h1 {
-    font-size: 48px;
-    color: #d4af37;
-    margin-bottom: 30px;
-    font-weight: 400;
-    letter-spacing: 2px;
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo-orb{
+    width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;
+    border-radius:50%;background:radial-gradient(circle at 35% 20%, rgba(255,242,190,.32), rgba(215,181,109,.10) 42%, rgba(255,255,255,.05) 72%),rgba(255,255,255,.04);
+    border:1px solid rgba(248,222,160,.22);box-shadow:0 0 34px rgba(215,181,109,.16);
+    overflow:hidden;
 }
-.banner-desc {
-    font-size: 18px;
-    color: #e0e0e0;
-    padding: 0 20px;
-    border-left: 2px solid #d4af37;
-    border-right: 2px solid #d4af37;
-    padding-left: 30px;
-    padding-right: 30px;
+.logo-orb img{width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(248,222,160,.24))}
+.brand-name{font-family:"KaiTi","STKaiti","Songti SC",serif;font-size:21px;letter-spacing:3px;color:#fff0bd}
+.brand-caption{margin-top:3px;font-size:10px;color:rgba(247,242,231,.55);letter-spacing:1.2px;white-space:nowrap}
+nav{display:flex;align-items:center;gap:8px}
+nav a{padding:11px 13px;border-radius:999px;color:rgba(247,242,231,.72);font-size:13px;letter-spacing:.8px;transition:.25s ease}
+nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.nav-cta{color:#171006!important;font-weight:700;background:linear-gradient(135deg,#fff0b4,#d7b56d 52%,#a87b35)!important;box-shadow:0 8px 28px rgba(215,181,109,.18)}
+.hero{
+    position:relative;min-height:100svh;padding:140px 0 90px;display:flex;align-items:center;overflow:hidden;
 }
-.services, .about, .contact {
-    width: 100%;
-    scroll-margin-top: 100px;
-    padding: 50px 5%;
-    background: #111;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-    text-align: center;
+.hero-light{
+    position:absolute;inset:auto auto 8% 50%;transform:translateX(-50%);
+    width:1200px;height:520px;border-radius:50%;
+    background:radial-gradient(circle, rgba(248,222,160,.20), rgba(215,181,109,.07) 34%, transparent 70%);
+    filter:blur(18px);pointer-events:none;z-index:-2;
 }
-.contact {
-    background: #0a0a0a;
+.hero-stage{display:grid;grid-template-columns:1fr;place-items:center;text-align:center}
+.eyebrow{
+    display:inline-flex;align-items:center;gap:10px;padding:10px 14px;margin-bottom:24px;
+    border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.10);
+    color:rgba(255,240,189,.86);font-size:13px;letter-spacing:1.5px;
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
 }
-.section-title {
-    font-size: 30px;
-    color: #d4af37;
-    margin: 0 0 30px;
-    position: relative;
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#f8dea0;box-shadow:0 0 18px #f8dea0}
+.hero h1{
+    font-family:"KaiTi","STKaiti","Songti SC",serif;font-weight:400;
+    font-size:clamp(72px, 12vw, 158px);line-height:.9;letter-spacing:clamp(8px, 1.4vw, 18px);
+    text-shadow:0 30px 100px rgba(215,181,109,.23);
 }
-.section-title::after {
-    content: '';
-    width: 80px;
-    height: 2px;
-    background: #d4af37;
-    display: block;
-    margin: 10px auto;
+.hero-subtitle{margin-top:24px;color:rgba(247,242,231,.78);font-size:clamp(18px,2.4vw,30px);font-weight:600;letter-spacing:.8px}
+.hero-copy{max-width:760px;margin:26px auto 0;color:rgba(247,242,231,.62);font-size:clamp(16px,1.55vw,20px);line-height:1.85}.hero-copy br,.section-desc br{display:block;content:'';margin-top:.2em}
+.hero-product{
+    position:relative;width:min(560px,82vw);aspect-ratio:1;margin:38px auto 4px;display:grid;place-items:center;
 }
-.service-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
+.product-glow{
+    position:absolute;inset:9%;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,239,185,.28), rgba(215,181,109,.10) 42%, transparent 68%);
+    filter:blur(20px);animation:pulseGlow 5.6s ease-in-out infinite;
 }
-.service-card {
-    text-align: center;
-    max-width: 300px;
+.product-ring{
+    position:absolute;inset:8%;border-radius:50%;border:1px solid rgba(248,222,160,.20);
+    background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 40px 120px rgba(0,0,0,.34);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
 }
-.service-icon {
-    font-size: 50px;
-    color: #d4af37;
-    margin-bottom: 15px;
+.product-ring::before,.product-ring::after{content:"";position:absolute;inset:11%;border-radius:50%;border:1px solid rgba(248,222,160,.12)}
+.product-ring::after{inset:22%;border-color:rgba(255,255,255,.08)}
+.product-img{
+    position:relative;width:68%;height:68%;object-fit:contain;
+    filter:drop-shadow(0 44px 70px rgba(0,0,0,.55)) drop-shadow(0 0 34px rgba(248,222,160,.18));
+    animation:float 6.2s ease-in-out infinite;
 }
-.service-name {
-    font-size: 22px;
-    color: #d4af37;
-    margin-bottom: 10px;
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{
+    min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:0 24px;border-radius:999px;font-size:15px;font-weight:700;letter-spacing:.3px;
+    transition:.25s ease;border:1px solid rgba(255,255,255,.12);will-change:transform;
 }
-.service-desc {
-    font-size: 16px;
-    color: #ccc;
-    line-height: 1.6;
+.btn-primary{color:#171006;background:linear-gradient(135deg,#fff0b4,#d7b56d 52%,#a87b35);box-shadow:0 18px 44px rgba(215,181,109,.22)}
+.btn-secondary{color:rgba(247,242,231,.88);background:rgba(255,255,255,.058);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 24px 60px rgba(215,181,109,.22)}
+.section{padding:120px 0;scroll-margin-top:100px}
+
+.title-line{
+    display:inline-block;
+    text-align:center;
 }
-.about p, .contact p {
-    max-width: 900px;
-    margin: 0 auto;
-    color: #ccc;
-    font-size: 16px;
-    line-height: 1.8;
+
+.section-header{max-width:780px;margin:0 auto 56px;text-align:center}
+.section-kicker{display:none !important;color:rgba(248,222,160,.72);font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:14px}
+.section-title{font-size:clamp(40px,5.2vw,74px);line-height:1.04;letter-spacing:-1.8px;margin-bottom:20px}
+.section-desc{color:rgba(247,242,231,.58);font-size:18px;line-height:1.8}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pillar{
+    position:relative;min-height:420px;padding:30px;border-radius:44px;
+    background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.032)),radial-gradient(circle at 35% 0%, rgba(248,222,160,.12), transparent 42%);
+    border:1px solid rgba(255,255,255,.105);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.24);
 }
-.contact-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+.pillar-icon{
+    width:64px;height:64px;display:grid;place-items:center;border-radius:22px;color:#191106;
+    background:linear-gradient(135deg,#fff0b4,#d7b56d);box-shadow:0 20px 50px rgba(215,181,109,.18);
+    font-size:24px;margin-bottom:110px;position:relative;z-index:1;
 }
-.social-logo {
-    font-size: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    text-decoration: none;
+.pillar h3{position:relative;z-index:1;font-size:28px;margin-bottom:14px;letter-spacing:-.4px;color:#fff1bd}
+.pillar p{position:relative;z-index:1;color:rgba(247,242,231,.62);line-height:1.85}
+.pillar-code{position:absolute;right:28px;top:30px;color:rgba(248,222,160,.24);font-size:13px;font-weight:700;letter-spacing:2px}
+.experience{display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:stretch}
+.feature-card{
+    position:relative;padding:48px;min-height:560px;border-radius:44px;border:1px solid rgba(255,255,255,.105);
+    background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.028)),radial-gradient(circle at 0% 0%, rgba(248,222,160,.13), transparent 34%);
+    box-shadow:var(--shadow);overflow:hidden;
 }
-.social-logo.facebook {color: #1877f2;}
-.social-logo.instagram {
-    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.feature-card h2{font-size:clamp(38px,5vw,68px);line-height:1.04;letter-spacing:-1.6px;margin-bottom:22px}
+.feature-card p{color:rgba(247,242,231,.60);font-size:18px;line-height:1.85;max-width:560px}
+.feature-visual{
+    position:absolute;left:50%;bottom:-70px;width:540px;height:360px;transform:translateX(-50%);
+    border-radius:999px 999px 0 0;background:radial-gradient(circle at 50% 8%, rgba(248,222,160,.24), transparent 32%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+    border:1px solid rgba(248,222,160,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    display:grid;place-items:start center;padding-top:56px;
 }
-.social-logo.gmail {color: #ea4335;}
-/* WhatsApp专属样式（绿色） */
-.social-logo.whatsapp {color: #25d366;}
-.social-logo:hover {transform: scale(1.1);}
-footer {
-    background: #000;
-    padding: 25px;
-    text-align: center;
-    color: #666;
-    border-top: 1px solid #222;
-    font-size: 14px;
+.feature-visual img{width:260px;height:260px;object-fit:contain;filter:drop-shadow(0 38px 60px rgba(0,0,0,.55)) drop-shadow(0 0 26px rgba(248,222,160,.16))}
+.steps{display:grid;gap:14px}
+.step{
+    display:grid;grid-template-columns:64px 1fr;gap:18px;padding:24px;border-radius:30px;
+    border:1px solid rgba(255,255,255,.105);background:rgba(255,255,255,.052);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
 }
-/* 平板端适配 */
-@media screen and (max-width: 1199px) and (min-width: 768px) {
-    .logo-img {height: 85px;}
-    nav a {margin: 0 20px; font-size: 16px;}
-    .banner {height: 400px; margin-top: 100px; padding-top: 80px;}
-    .banner h1 {font-size: 40px;}
-    .banner-desc {font-size: 17px;}
+.step-no{
+    width:64px;height:64px;display:grid;place-items:center;border-radius:22px;
+    background:rgba(248,222,160,.08);border:1px solid rgba(248,222,160,.18);color:#ffe7a8;font-weight:800;
 }
-/* 手机端适配 */
-@media screen and (max-width: 767px) {
-    .logo-img {height: 80px;}
-    nav a {margin: 0 12px; font-size: 14px;}
-    .banner {height: 300px; margin-top: 100px;}
-    .banner h1 {font-size: 32px; margin-bottom: 20px;}
-    .banner-desc {font-size: 15px; padding: 0 15px;}
-    .service-list {gap: 30px;}
-    .service-icon {font-size: 40px;}
-    .service-name {font-size: 18px;}
-    .contact-links {gap: 30px;}
-    .social-logo {font-size: 35px;}
+.step h4{color:#fff0bd;font-size:20px;margin-bottom:8px}
+.step p{color:rgba(247,242,231,.56);line-height:1.7}
+.trust{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.trust-card{
+    padding:38px;border-radius:44px;border:1px solid rgba(255,255,255,.105);
+    background:rgba(255,255,255,.052);min-height:330px;position:relative;overflow:hidden;
+}
+.trust-card::after{
+    content:"";position:absolute;width:260px;height:260px;right:-140px;bottom:-140px;
+    border-radius:50%;background:rgba(248,222,160,.12);filter:blur(16px);
+}
+.trust-card h3{font-size:36px;color:#fff0bd;letter-spacing:-.8px;margin-bottom:28px}
+.checklist{list-style:none;display:grid;gap:18px;position:relative;z-index:1}
+.checklist li{display:flex;gap:12px;color:rgba(247,242,231,.62);line-height:1.7}
+.checklist i{color:#f8dea0;margin-top:5px}
+.faq-wrap{max-width:900px;margin:0 auto;display:grid;gap:12px}
+details{
+    border-radius:26px;border:1px solid rgba(255,255,255,.105);background:rgba(255,255,255,.052);
+    padding:22px 24px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;
+    gap:20px;color:#fff0bd;font-size:18px;font-weight:700;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:#f8dea0;font-size:24px;font-weight:400}
+details[open] summary::after{content:"−"}
+details p{margin-top:16px;color:rgba(247,242,231,.60);line-height:1.8}
+.contact{padding:120px 0 140px}
+.contact-panel{
+    position:relative;overflow:hidden;min-height:560px;display:grid;place-items:center;text-align:center;
+    border-radius:56px;border:1px solid rgba(255,255,255,.13);
+    background:radial-gradient(circle at 50% 0%, rgba(248,222,160,.20), transparent 32%),radial-gradient(circle at 88% 72%, rgba(117,78,35,.22), transparent 30%),linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.026));
+    box-shadow:var(--shadow);padding:58px;
+}
+.contact-panel::before{content:"";position:absolute;inset:18px;border-radius:42px;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+.contact-content{position:relative;z-index:1;max-width:760px}
+.contact h2{font-size:clamp(42px,6vw,86px);line-height:1;letter-spacing:-2px;margin-bottom:22px}
+.contact p{color:rgba(247,242,231,.60);font-size:19px;line-height:1.8;margin-bottom:34px}
+.contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.socials{margin-top:28px;display:flex;justify-content:center;gap:12px}
+.social{
+    width:52px;height:52px;display:grid;place-items:center;border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.052);color:#f8dea0;transition:.25s ease;
+}
+.social:hover{transform:translateY(-2px);background:rgba(255,255,255,.09)}
+.float-wa{
+    position:fixed;right:22px;bottom:22px;z-index:1001;width:64px;height:64px;display:grid;place-items:center;
+    border-radius:50%;background:linear-gradient(135deg,#67f49c,#25d366);color:#03180a;font-size:30px;
+    box-shadow:0 22px 58px rgba(37,211,102,.35);transition:.25s ease;
+}
+.float-wa:hover{transform:translateY(-3px) scale(1.03)}
+footer{padding:30px 0 calc(86px + env(safe-area-inset-bottom));text-align:center;color:rgba(247,242,231,.34);font-size:13px;border-top:1px solid rgba(255,255,255,.08)}
+.reveal{opacity:0;transform:translateY(24px) scale(.985);animation:reveal .8s cubic-bezier(.2,.8,.2,1) forwards}
+.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.22s}
+@keyframes reveal{to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes pulseGlow{0%,100%{opacity:.72;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+
+
+/* Mobile-first optimization patch */
+:root{
+    --section-gap-mobile:72px;
+    --section-gap-desktop:118px;
+}
+html{
+    -webkit-text-size-adjust:100%;
+}
+body{
+    padding-bottom:env(safe-area-inset-bottom);
+}
+.container{
+    width:min(100% - 28px, 1180px);
+}
+header{
+    top:10px;
+    padding:0 14px;
+}
+.nav-shell{
+    height:60px;
+    padding:0 8px 0 10px;
+    gap:10px;
+}
+.logo-orb{
+    width:40px;
+    height:40px;
+    flex-basis:40px;
+}
+.logo-orb img{
+    width:32px;
+    height:32px;
+}
+.brand{
+    gap:10px;
+}
+.brand-name{
+    font-size:18px;
+    letter-spacing:2px;
+}
+.brand-caption{
+    display:none;
+}
+nav{
+    gap:6px;
+}
+nav a:not(.nav-cta){
+    display:none;
+}
+.nav-cta{
+    padding:10px 12px;
+    font-size:12px;
+    white-space:nowrap;
+}
+.hero{
+    min-height:auto;
+    padding:104px 0 56px;
+}
+.hero-light{
+    width:780px;
+    height:320px;
+    bottom:10%;
+}
+.eyebrow{
+    margin-bottom:18px;
+    padding:8px 12px;
+    font-size:11px;
+    letter-spacing:.8px;
+}
+.hero h1{
+    font-size:54px;
+    letter-spacing:7px;
+}
+.hero-subtitle{
+    margin-top:14px;
+    font-size:18px;
+    line-height:1.45;
+}
+.hero-copy{
+    max-width:100%;
+    margin-top:18px;
+    font-size:15.5px;
+    line-height:1.8;
+}
+.hero-product{
+    width:min(340px,84vw);
+    margin-top:24px;
+    margin-bottom:2px;
+}
+.hero-actions{
+    margin-top:26px;
+    width:100%;
+    gap:10px;
+}
+.btn{
+    width:100%;
+    min-height:52px;
+    padding:0 18px;
+    font-size:14px;
+}
+.section{
+    padding:var(--section-gap-mobile) 0;
+    scroll-margin-top:82px;
+}
+.section-header{
+    max-width:100%;
+    margin-bottom:36px;
+}
+.section-title{
+    font-size:44px;
+    line-height:1.02;
+    letter-spacing:-1px;
+}
+.section-desc{
+    font-size:15.5px;
+    line-height:1.8;
+}
+.pillars,
+.experience,
+.trust{
+    grid-template-columns:1fr;
+    gap:14px;
+}
+.pillar{
+    min-height:auto;
+    padding:24px;
+    border-radius:30px;
+}
+.pillar-icon{
+    width:56px;
+    height:56px;
+    border-radius:18px;
+    font-size:22px;
+    margin-bottom:70px;
+}
+.pillar h3{
+    font-size:24px;
+}
+.pillar p{
+    font-size:15px;
+    line-height:1.8;
+}
+.pillar-code{
+    top:24px;
+    right:22px;
+}
+.feature-card{
+    min-height:460px;
+    padding:28px 24px 240px;
+    border-radius:30px;
+}
+.feature-card h2{
+    font-size:42px;
+    line-height:1.02;
+    margin-bottom:16px;
+}
+.feature-card p{
+    font-size:15.5px;
+    line-height:1.82;
+    max-width:100%;
+}
+.feature-visual{
+    width:360px;
+    height:240px;
+    bottom:-50px;
+    padding-top:42px;
+}
+.feature-visual img{
+    width:180px;
+    height:180px;
+}
+.steps{
+    gap:12px;
+}
+.step{
+    grid-template-columns:1fr;
+    gap:14px;
+    padding:20px;
+    border-radius:24px;
+}
+.step-no{
+    width:50px;
+    height:50px;
+    border-radius:16px;
+}
+.step h4{
+    font-size:18px;
+    margin-bottom:6px;
+}
+.step p{
+    font-size:14.5px;
+}
+.trust-card{
+    min-height:auto;
+    padding:26px 24px;
+    border-radius:30px;
+}
+.trust-card h3{
+    font-size:28px;
+    margin-bottom:22px;
+}
+.checklist{
+    gap:14px;
+}
+.checklist li{
+    font-size:14.5px;
+}
+.faq-wrap{
+    gap:10px;
+}
+details{
+    padding:18px 18px;
+    border-radius:22px;
+}
+summary{
+    font-size:16px;
+    line-height:1.5;
+    align-items:flex-start;
+}
+summary::after{
+    font-size:22px;
+    line-height:1;
+    margin-top:-1px;
+}
+details p{
+    font-size:14.5px;
+    line-height:1.8;
+}
+.contact{
+    padding:var(--section-gap-mobile) 0 120px;
+}
+.contact-panel{
+    min-height:auto;
+    padding:36px 18px;
+    border-radius:30px;
+}
+.contact-panel::before{
+    inset:12px;
+    border-radius:20px;
+}
+.contact-content{
+    max-width:100%;
+}
+.contact h2{
+    font-size:44px;
+    line-height:1.02;
+    letter-spacing:-1px;
+    margin-bottom:16px;
+}
+.contact p{
+    font-size:15.5px;
+    line-height:1.8;
+    margin-bottom:24px;
+}
+.contact-actions{
+    gap:10px;
+}
+.socials{
+    margin-top:22px;
+    gap:10px;
+}
+.social{
+    width:46px;
+    height:46px;
+}
+.float-wa{
+    width:56px;
+    height:56px;
+    right:14px;
+    bottom:14px;
+    font-size:26px;
+}
+footer{
+    padding:24px 0 calc(80px + env(safe-area-inset-bottom));
+    font-size:12px;
+}
+@media(min-width:561px){
+    .container{width:min(100% - 36px, 1180px);}
+    header{top:10px;padding:0 16px;}
+    .nav-shell{height:64px;padding:0 10px 0 12px;}
+    .logo-orb{width:44px;height:44px;flex-basis:44px;}
+    .logo-orb img{width:36px;height:36px;}
+    .brand-name{font-size:19px;}
+    .hero{padding:118px 0 72px;}
+    .hero h1{font-size:68px;letter-spacing:8px;}
+    .hero-subtitle{font-size:20px;}
+    .hero-copy{font-size:16.5px;}
+    .hero-product{width:min(420px,76vw);}
+    .section{padding:86px 0;}
+    .section-title{font-size:56px;}
+    .section-desc,.feature-card p,.contact p{font-size:16.5px;}
+    .feature-card{min-height:540px;padding:34px 30px 260px;}
+    .feature-card h2{font-size:50px;}
+    .feature-visual{width:420px;height:280px;}
+    .feature-visual img{width:220px;height:220px;}
+    .trust-card h3{font-size:32px;}
+    .contact h2{font-size:56px;}
+}
+@media(min-width:981px){
+    .container{width:min(1180px, calc(100% - 48px));}
+    header{top:12px;padding:0 24px;}
+    .nav-shell{height:68px;padding:0 12px 0 14px;gap:18px;}
+    .logo-orb{width:46px;height:46px;flex-basis:46px;}
+    .logo-orb img{width:38px;height:38px;}
+    .brand-name{font-size:21px;letter-spacing:3px;}
+    .brand-caption{display:block;}
+    nav{gap:8px;}
+    nav a:not(.nav-cta){display:inline-flex;}
+    .nav-cta{padding:11px 13px;font-size:13px;}
+    .hero{
+        min-height:100svh;
+        padding:140px 0 90px;
+    }
+    .hero-light{width:1200px;height:520px;}
+    .eyebrow{margin-bottom:24px;padding:10px 14px;font-size:13px;letter-spacing:1.5px;}
+    .hero h1{font-size:clamp(72px, 12vw, 158px);letter-spacing:clamp(8px, 1.4vw, 18px);}
+    .hero-subtitle{margin-top:24px;font-size:clamp(18px,2.4vw,30px);}
+    .hero-copy{max-width:760px;margin-top:26px;font-size:clamp(16px,1.55vw,20px);}
+    .hero-product{width:min(560px,82vw);margin-top:38px;}
+    .hero-actions{width:auto;margin-top:36px;gap:12px;}
+    .btn{width:auto;min-height:56px;padding:0 24px;font-size:15px;}
+    .section{
+        padding:var(--section-gap-desktop) 0;
+        scroll-margin-top:100px;
+    }
+    .section-header{max-width:780px;margin-bottom:48px;}
+    .section-title{font-size:clamp(40px,5.2vw,74px);letter-spacing:-1.8px;}
+    .section-desc{font-size:18px;}
+    .pillars{grid-template-columns:repeat(3,1fr);gap:18px;}
+    .pillar{min-height:420px;padding:30px;border-radius:44px;}
+    .pillar-icon{width:64px;height:64px;border-radius:22px;font-size:24px;margin-bottom:110px;}
+    .pillar h3{font-size:28px;}
+    .pillar p{font-size:16px;}
+    .experience{grid-template-columns:1.02fr .98fr;gap:22px;}
+    .feature-card{min-height:560px;padding:48px;border-radius:44px;}
+    .feature-card h2{font-size:clamp(38px,5vw,68px);margin-bottom:22px;}
+    .feature-card p{font-size:18px;}
+    .feature-visual{width:540px;height:360px;bottom:-70px;padding-top:56px;}
+    .feature-visual img{width:260px;height:260px;}
+    .steps{gap:14px;}
+    .step{grid-template-columns:64px 1fr;gap:18px;padding:24px;border-radius:30px;}
+    .step-no{width:64px;height:64px;border-radius:22px;}
+    .step h4{font-size:20px;}
+    .step p{font-size:16px;}
+    .trust{grid-template-columns:1fr 1fr;gap:18px;}
+    .trust-card{padding:38px;border-radius:44px;}
+    .trust-card h3{font-size:36px;margin-bottom:28px;}
+    .faq-wrap{max-width:900px;gap:12px;}
+    details{padding:22px 24px;border-radius:26px;}
+    summary{font-size:18px;align-items:center;}
+    details p{font-size:16px;}
+    .contact{padding:var(--section-gap-desktop) 0 140px;}
+    .contact-panel{min-height:560px;padding:58px;border-radius:56px;}
+    .contact-panel::before{inset:18px;border-radius:42px;}
+    .contact h2{font-size:clamp(42px,6vw,86px);letter-spacing:-2px;margin-bottom:22px;}
+    .contact p{font-size:19px;margin-bottom:34px;}
+    .social{width:52px;height:52px;}
+    .float-wa{width:64px;height:64px;right:22px;bottom:22px;font-size:30px;}
+    footer{font-size:13px;padding:30px 0 calc(86px + env(safe-area-inset-bottom));}
+}
+
+@media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
 }
 </style>
-<!-- 引入Font Awesome图标库（确保所有图标正常显示） -->
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 <header>
-    <a href="#top"><img src="https://p5-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/690e4e8b430c4963bf60968823092f1c.png~tplv-a9rns2rl98-image.png?lk3s=8e244e95&rcl=20260226005627949F13E80FCE8B1409FE&rrcfp=dafada99&x-expires=2088262587&x-signature=L4WPMO6TR33kUyiXeGJlaX0MfwE%3D" alt="泰佛行" class="logo-img"></a>
-    <nav>
-        <a href="#services">业务</a>
-        <a href="#about">关于</a>
-        <a href="#contact">联系</a>
-    </nav>
+    <div class="nav-shell">
+        <a class="brand" href="#top" aria-label="泰佛行首页">
+            <div class="logo-orb">
+                <img src="assets/taifohang-logo.png" alt="泰佛行 Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-family:KaiTi,serif;color:#fff0bd;font-size:20px;&quot;>泰</span>';">
+            </div>
+            <div>
+                <div class="brand-name">泰佛行</div>
+                <div class="brand-caption">泰国正牌 · 运程测算</div>
+            </div>
+        </a>
+
+        <nav aria-label="主导航">
+            <a href="#services">业务</a>
+            <a href="#experience">流程</a>
+            <a href="#trust">原则</a>
+            <a href="#faq">常见问题</a>
+            <a class="nav-cta" href="#contact">预约咨询</a>
+        </nav>
+    </div>
 </header>
-<div id="top"></div>
 
-<section class="banner">
-    <h1>泰佛行</h1>
-    <div class="banner-desc">泰国正牌甄选 · 泰师运程测算</div>
-</section>
+<main id="top">
+    <section class="hero">
+        <div class="hero-light"></div>
+        <div class="container hero-stage">
+            <div class="eyebrow reveal">
+                <span class="eyebrow-dot"></span>
+                始于 2018 · 只做正牌 · 诚信结缘
+            </div>
 
-<section class="services" id="services">
-    <h2 class="section-title">核心业务</h2>
-    <div class="service-list">
-        <div class="service-card">
-            <div class="service-icon"><i class="fas fa-gem"></i></div>
-            <div class="service-name">泰国正牌</div>
-            <div class="service-desc">开光佛牌，保真溯源，品类齐全</div>
+            <h1 class="gold reveal d2">泰佛行</h1>
+            <div class="hero-subtitle reveal d2">泰国正牌甄选 · 泰师运程测算</div>
+
+            <p class="hero-copy reveal d3">
+                以更克制、更清楚、更有分寸的方式，协助有缘人了解泰国正牌佛牌与运程方向。<br>先理解，再结缘。
+            </p>
+
+            <div class="hero-product reveal d3" aria-hidden="true">
+                <div class="product-glow"></div>
+                <div class="product-ring"></div>
+                <img class="product-img" src="assets/hero-amulet.png" alt="" onerror="this.src='assets/taifohang-logo.png'">
+            </div>
+
+            <div class="hero-actions reveal d3">
+                <a class="btn btn-primary" href="https://wa.me/601172334462" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp 预约咨询
+                </a>
+                <a class="btn btn-secondary" href="#services">
+                    了解泰佛行 <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
         </div>
-        <div class="service-card">
-            <div class="service-icon"><i class="fas fa-user-friends"></i></div>
-            <div class="service-name">运程测算</div>
-            <div class="service-desc">泰国师傅亲测，定制专属转运方案</div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-kicker">核心业务</div>
+                <h2 class="section-title gold"><span class="title-line">正牌甄选，</span><br><span class="title-line">清楚结缘。</span></h2>
+                <p class="section-desc balance-text">
+                    专注泰国正牌佛牌甄选与泰师运程测算，<br>以清楚、审慎、负责任的方式协助有缘人了解适合自己的方向。
+                </p>
+            </div>
+
+            <div class="pillars">
+                <article class="pillar reveal">
+                    <div class="noise"></div>
+                    <div class="pillar-code">01</div>
+                    <div class="pillar-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>泰国正牌甄选</h3>
+                    <p>重视来源、寺庙、师傅、仪轨与结缘背景。不是为了神秘，而是为了让选择更清楚。</p>
+                </article>
+
+                <article class="pillar reveal d2">
+                    <div class="noise"></div>
+                    <div class="pillar-code">02</div>
+                    <div class="pillar-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                    <h3>泰师运程测算</h3>
+                    <p>通过预约方式了解当下状态、阻碍与方向，提供更个人化的参考建议。</p>
+                </article>
+
+                <article class="pillar reveal d3">
+                    <div class="noise"></div>
+                    <div class="pillar-code">03</div>
+                    <div class="pillar-icon"><i class="fa-solid fa-compass"></i></div>
+                    <h3>结缘方向建议</h3>
+                    <p>先了解需求、目的与预算，再给方向。避免盲目，也避免被恐惧推动决定。</p>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="about" id="about">
-    <h2 class="section-title">关于我们</h2>
-    <p>泰佛行始于2018年，专注泰国正牌与运程测算，多年深耕，只做正牌，诚信结缘。</p>
-</section>
+    <section id="experience" class="section">
+        <div class="container experience">
+            <div class="feature-card reveal">
+                <div class="noise"></div>
+                <h2 class="gold">结缘前，<br>先看清楚。</h2>
+                <p>
+                    每一次结缘，都应该建立在理解与信任之上。我们会先了解需求，再提供更合适的方向建议。
+                </p>
 
-<section class="contact" id="contact">
-    <h2 class="section-title">联系我们</h2>
-    <p>咨询佛牌/预约测算，可通过以下渠道联系</p>
-    <div class="contact-links">
-        <a href="https://www.facebook.com/profile.php?id=61556600907559" target="_blank" class="social-logo facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/taifo_hang/?__pwa=1" target="_blank" class="social-logo instagram"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:taifohang3444@gmail.com" target="_blank" class="social-logo gmail"><i class="fas fa-envelope"></i></a>
-        <!-- 最终正确的WhatsApp链接（601172334462） -->
-        <a href="https://wa.me/601172334462" target="_blank" class="social-logo whatsapp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-</section>
+                <div class="feature-visual" aria-hidden="true">
+                    <img src="assets/hero-amulet.png" alt="" onerror="this.src='assets/taifohang-logo.png'">
+                </div>
+            </div>
 
-<footer>© 2026 泰佛行 版权所有 | 泰国正牌 · 运程测算</footer>
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="step-no">01</div>
+                    <div>
+                        <h4>初步咨询</h4>
+                        <p>通过 WhatsApp 简单说明你想了解的内容，或目前面对的方向问题。</p>
+                    </div>
+                </div>
+
+                <div class="step reveal d2">
+                    <div class="step-no">02</div>
+                    <div>
+                        <h4>了解需求</h4>
+                        <p>先确认你的目的、预算与接受度，不在未了解前乱推荐。</p>
+                    </div>
+                </div>
+
+                <div class="step reveal d2">
+                    <div class="step-no">03</div>
+                    <div>
+                        <h4>提供方向</h4>
+                        <p>根据情况建议结缘方向、测算安排，或是否需要进一步了解。</p>
+                    </div>
+                </div>
+
+                <div class="step reveal d3">
+                    <div class="step-no">04</div>
+                    <div>
+                        <h4>确认安排</h4>
+                        <p>确认方式与下一步。过程保持清楚透明，不做夸张承诺。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trust" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-kicker">服务原则</div>
+                <h2 class="section-title gold"><span class="title-line">清楚原则，</span><br><span class="title-line">安心结缘。</span></h2>
+                <p class="section-desc balance-text">
+                    我们重视清楚说明与负责任建议，不以夸张承诺推动决定，只以合适、真实与信任作为基础。
+                </p>
+            </div>
+
+            <div class="trust">
+                <div class="trust-card reveal">
+                    <h3>我们会做的</h3>
+                    <ul class="checklist">
+                        <li><i class="fa-solid fa-circle-check"></i><span>清楚说明结缘方向与适合度。</span></li>
+                        <li><i class="fa-solid fa-circle-check"></i><span>重视来源、背景与基本资料。</span></li>
+                        <li><i class="fa-solid fa-circle-check"></i><span>根据需求提供更稳妥的建议。</span></li>
+                    </ul>
+                </div>
+
+                <div class="trust-card reveal d2">
+                    <h3>我们不会做的</h3>
+                    <ul class="checklist">
+                        <li><i class="fa-solid fa-ban"></i><span>不会用恐吓式话术逼你决定。</span></li>
+                        <li><i class="fa-solid fa-ban"></i><span>不会夸大功效或承诺不现实结果。</span></li>
+                        <li><i class="fa-solid fa-ban"></i><span>不会在未了解需求前乱推荐。</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-kicker">常见问题</div>
+                <h2 class="section-title gold">常见问题，<br>先了解。</h2>
+                <p class="section-desc balance-text">第一次咨询前，很多人都会有疑问。以下整理常见问题，帮助你先了解基本流程与方向。</p>
+            </div>
+
+            <div class="faq-wrap">
+                <details class="reveal">
+                    <summary>什么是泰国正牌？</summary>
+                    <p>一般指有清楚来源、寺庙、师傅或仪轨背景的佛牌。不同佛牌有不同背景与意义，建议先了解清楚再决定是否结缘。</p>
+                </details>
+
+                <details class="reveal d2">
+                    <summary>第一次咨询需要准备什么？</summary>
+                    <p>可以先简单说明你想了解佛牌、测算，还是目前遇到的方向问题。如果有预算或偏好，也可以一起说明。</p>
+                </details>
+
+                <details class="reveal d2">
+                    <summary>运程测算是怎样进行？</summary>
+                    <p>以预约方式安排，根据情况了解你的问题方向，再提供相应参考。具体方式会在咨询时说明。</p>
+                </details>
+
+                <details class="reveal d3">
+                    <summary>会不会一开始就推荐我购买？</summary>
+                    <p>不会。我们会先了解需求、目的与预算，再提供适合方向。不适合的情况，也不会硬推。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-panel reveal">
+                <div class="noise"></div>
+                <div class="contact-content">
+                    <h2 class="gold">想咨询佛牌<br>或预约测算？</h2>
+                    <p class="balance-text">
+                        通过 WhatsApp 简单说明你的需求，我们会提供更清楚、合适的下一步建议。
+                    </p>
+
+                    <div class="contact-actions">
+                        <a class="btn btn-primary" href="https://wa.me/601172334462" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp 立即咨询
+                        </a>
+                        <a class="btn btn-secondary" href="mailto:taifohang3444@gmail.com">
+                            <i class="fa-solid fa-envelope"></i> Email 联络
+                        </a>
+                    </div>
+
+                    <div class="socials">
+                        <a class="social" href="https://www.facebook.com/profile.php?id=61556600907559" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a class="social" href="https://www.instagram.com/taifo_hang/?__pwa=1" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a class="social" href="mailto:taifohang3444@gmail.com" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<a class="float-wa" href="https://wa.me/601172334462" target="_blank" rel="noopener" aria-label="WhatsApp 咨询">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<footer>
+    <div class="container">© 2026 泰佛行 版权所有｜泰国正牌 · 泰师运程测算</div>
+</footer>
+<div style="height:8px"></div>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+        }
+    });
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+});
+</script>
 </body>
 </html>
