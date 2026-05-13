@@ -1,0 +1,1 @@
+Replace with real images. Placeholder generation failed: cannot write mode RGBA as JPEG
